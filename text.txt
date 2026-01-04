@@ -3,22 +3,3 @@ source venv/bin/activate
 python main.py ingest
 
 python main.py query "Trong hệ thống pháp luật của Việt Nam, khi một người vi phạm hợp đồng dân sự, theo quy định của Bộ luật Dân sự 2015, thì nghĩa vụ bồi thường thiệt hại có thể được xác định như thế nào nếu bên vi phạm không thể chứng minh được nguyên nhân vi phạm là do hoàn cảnh bất khả kháng?"
-
-# 1) Tổng quan DB đang có gì
-python inspect.py summary
-
-# 2) Xem schema/cột các bảng
-python inspect.py schema
-
-# 3) Xem vài chunk mới nhất (đọc text thật)
-python inspect.py latest-chunks --n 5
-python inspect.py latest-chunks --n 5 --active
-
-# 4) Xem 1 văn bản + versions + vài chunks của version mới nhất
-python inspect.py doc "<doc_id>" --chunks --max-chunks 5
-
-# 5) Search nội dung trong chunk
-python inspect.py search --q "Điều 35" --n 10 --active
-
-# 6) Audit nhanh dữ liệu (gợi ý khi bạn nghi crawl bị chặn trả cùng 1 HTML)
-python inspect.py audit --out data/audit_report.json --sample 100
